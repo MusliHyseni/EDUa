@@ -1,5 +1,6 @@
 $color1:rgb(249, 245, 246);
 $sec-color: rgb(248, 232, 238);
+$thrd-color: rgb(101, 84, 175);
 * {
     font-family: 'Roboto Slab', serif;
     box-sizing: border-box;
@@ -33,7 +34,7 @@ ul {
             color: rgb(149, 117, 222);
 
         span {
-            color: rgb(101, 84, 175);
+            color: $thrd-color;
         }
     }
     }
@@ -49,11 +50,17 @@ ul {
         ul {
             display: flex;
             margin-right: 20px;
-            
+            font-size: 19px;
+            color: $thrd-color;
             li {
                 justify-self: flex-end;
                 position: relative;
                 margin: 0px 15px;
+                 &.buttons {
+                    margin: 0px 5px;
+                    width: 35px;
+                    
+                 }
 
                 ul {
                     display: none;
@@ -77,8 +84,11 @@ ul {
     section {
         width: 100%;
         height: 350px;
+        justify-self: center;
         img {
             margin: 0px auto;
+            width: 100%;
+           
         }
     }
 }
