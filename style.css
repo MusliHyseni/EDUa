@@ -46,6 +46,10 @@ ul {
     position: relative;
     margin: 0px 15px;
   }
+  header ul li.buttons {
+    margin: 0px 5px;
+    width: 35px;
+  }
   header ul li ul {
     display: none;
     text-align: center;
@@ -65,5 +69,6 @@ ul {
   }
   section img {
     margin: 0px auto;
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
