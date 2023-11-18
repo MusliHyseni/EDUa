@@ -12,17 +12,28 @@ body {
 
 h1.title {
   color: rgb(149, 117, 222);
+  margin-right: auto;
+  justify-content: flex-start;
+}
+h1.title span {
+  color: rgb(101, 84, 175);
 }
 
 a {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
 header {
+  display: flex;
   background-color: rgb(251, 235, 240);
   width: 100%;
 }
 header ul {
+  display: flex;
   color: rgb(101, 84, 175);
 }
 header ul li button {
@@ -30,17 +41,48 @@ header ul li button {
   color: rgb(249, 245, 246);
   border-radius: 2px;
 }
+header ul li button.hover {
+  background-color: rgb(75, 52, 177);
+  box-shadow: none;
+}
 header ul li ul {
   display: none;
   text-align: center;
   position: absolute;
   white-space: nowrap;
 }
-header ul li.shërbimet:hover ul {
-  display: block;
-  position: absolute;
-}
 
+section.photo-bg {
+  justify-self: center;
+  background-image: url("assets/images/city.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section img.images {
+  width: 100%;
+}
+section form {
+  display: flex;
+  justify-content: center;
+  box-shadow: 3px 4px 4px white;
+}
+section form input {
+  display: inline-block;
+  position: absolute;
+  border: 3px solid white;
+  box-shadow: rgba(255, 237, 237, 0.15) 0px 15px 25px, rgba(232, 213, 213, 0.05) 0px 5px 10px;
+}
+section form input::-moz-placeholder {
+  opacity: 0.8;
+}
+section form input::placeholder {
+  opacity: 0.8;
+}
+section form input:focus {
+  box-shadow: rgba(255, 237, 237, 0.15) 0px 17px 27px, rgba(232, 213, 213, 0.05) 0px 7px 12px;
+}
 section.main {
   width: 100%;
   height: 300px;
@@ -53,24 +95,152 @@ section.main h1.sub-title {
 section.main h3 {
   color: rgb(129, 100, 197);
 }
-
-ul {
-  list-style-type: none;
+section.main h2.eksploro {
+  color: rgb(101, 84, 175);
+  text-align: center;
+}
+section.main div.courses {
+  background-color: rgb(229, 220, 244);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+section.main div.courses .course {
+  background-color: white;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 12px;
+}
+section.main div.courses .course img {
+  display: inline;
+  border-radius: 12px;
+  opacity: 0.8;
+  align-self: center;
+}
+section.main div.courses .course h4 {
+  color: rgb(69, 44, 127);
+  align-self: center;
+  flex: 1;
+}
+section.main div.courses .course h4 span {
+  color: rgba(77, 75, 82, 0.7);
+}
+section.degrees div.courses {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+section.universities {
+  background-color: rgb(229, 220, 244);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px;
+}
+section.universities h1 {
+  color: rgb(101, 84, 175);
+  text-align: center;
+}
+section.universities ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+section.books {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 255, 237, 237, 0.35 2px 15px 25px, rgba(232, 213, 213, 0.25) 0px 7px 10px;
+}
+section.books h1 {
+  color: rgb(101, 84, 175);
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+section.books .message {
+  background-color: rgb(208, 191, 234);
+  border-radius: 12px;
+  color: rgb(117, 90, 181);
+  display: block;
+  position: absolute;
+  animation: openclose 7s ease-in-out infinite;
+}
+section.books .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.books .book {
+  position: relative;
+  text-align: center;
+  margin: 2.5%;
+  box-shadow: rgba(0, 0, 0, 0.18) 3px 3px 8px;
+}
+section.books .book.book-cover {
+  background-size: 100% 100%;
+}
+section.books .book-cover {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: inset 4px 2px 4px rgba(255, 255, 255, 0.376) inset 0 -1px 3px rgba(0, 0, 0, 0.502);
+}
+section.books .effect {
+  height: 100%;
+  border-left: 2px solid rgba(0, 0, 0, 0.063);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+}
+section.books .light {
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  border-radius: 3px;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+  top: 0;
+  right: 0;
+  opacity: 0.1;
+}
+section.books .book-inside {
+  width: calc(100% - 2px);
+  height: 96%;
+  position: relative;
+  top: 2%;
+  border: 1px solid grey;
+  border-radius: 3px;
+  background: white;
+  box-shadow: 10px 40px 40px -10px rgba(0, 0, 0, 0.1882352941), inset -2px 0 0 grey, inset -3px 0 0 #dbdbdb, inset -4px 0 0 white, inset -5px 0 0 #dbdbdb, inset -6px 0 0 white, inset -7px 0 0 #dbdbdb, inset -8px 0 0 white, inset -9px 0 0 #dbdbdb;
+}
+section.books .title {
+  width: 100%;
+  color: rgb(101, 84, 175);
+  text-align: center;
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+}
+section.books .title p {
+  width: 100%;
+  margin: 0;
+}
+section.books .title .btn {
+  position: relative;
+  background: rgb(208, 191, 234);
+  color: rgb(101, 84, 175);
+  border-radius: 50px;
+  display: inline-block;
+  opacity: 0;
 }
 
 /*Kodi i përbashkët për dy versionet*/
 @media screen and (min-width: 769px) {
   h1.title {
     font-size: 56px;
-    margin-right: auto;
     margin-left: 40px;
-    justify-content: flex-start;
-  }
-  h1.title span {
-    color: rgb(101, 84, 175);
   }
   header {
-    display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 100px;
@@ -89,13 +259,13 @@ ul {
     align-items: baseline;
   }
   header ul li button {
-    box-shadow: none;
     margin: 0px;
     width: 75px;
     height: 30px;
     letter-spacing: 0.7px;
   }
   header ul li.shërbimet:hover ul {
+    display: block;
     position: absolute;
     top: 35px;
     line-height: 33px;
@@ -108,23 +278,11 @@ ul {
     width: 100%;
     height: 130px;
     max-height: 150px;
-    justify-self: center;
     margin-bottom: 6px;
-    background-image: url("assets/images/city.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
   section.photo-bg img.images {
     margin: 0px auto;
-    width: 100%;
     min-height: 130px;
-  }
-  section.photo-bg form {
-    display: flex;
-    justify-content: center;
-    box-shadow: 3px 4px 4px white;
   }
   section.photo-bg form input {
     display: inline-block;
@@ -142,20 +300,9 @@ ul {
   }
   section.photo-bg form input::-moz-placeholder {
     font-size: 16px;
-    opacity: 0.8;
   }
   section.photo-bg form input::placeholder {
     font-size: 16px;
-    opacity: 0.8;
-  }
-  section.photo-bg form input::-moz-placeholder::after {
-    content: "assetsimagessearch.png";
-  }
-  section.photo-bg form input::placeholder::after {
-    content: "assetsimagessearch.png";
-  }
-  section.photo-bg form input:focus {
-    border: 1px solid rgb(101, 84, 175);
   }
   section.main h1.sub-title, section.main h3 {
     text-align: center;
@@ -164,95 +311,59 @@ ul {
     padding-left: 48px;
   }
   section.main h2.eksploro {
-    color: rgb(101, 84, 175);
-    text-align: center;
     font-size: 48px;
     margin: 50px 0px 20px;
   }
   section.main div.courses {
-    background-color: rgb(229, 220, 244);
-    display: grid;
     grid-template-rows: 80px;
-    grid-template-columns: repeat(5, 1fr);
     padding: 30px;
     padding-left: 90px;
   }
   section.main div.courses .course {
-    background-color: white;
-    display: flex;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    border-radius: 12px;
     width: 270px;
     transition: background-color 0.2s ease;
   }
   section.main div.courses .course:hover {
     background-color: rgb(235, 235, 235);
-    box-shadow: rgba(0, 0, 0, 0.16) 3px 10px 36px 6px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.14) 3px 10px 36px 6px, rgba(0, 0, 0, 0.16) 0px 0px 0px 1px;
     cursor: pointer;
   }
   section.main div.courses .course img {
-    display: inline;
     margin-right: 15px;
-    border-radius: 12px;
     margin-left: 3px;
-    opacity: 0.8;
-    align-self: center;
   }
   section.main div.courses .course h4 {
     margin: 10px 0px 15px 0px;
-    color: rgb(69, 44, 127);
-    align-self: center;
-    flex: 1;
   }
   section.main div.courses .course h4 span {
-    padding-left: 70px;
-    font-size: 14px;
     color: rgba(77, 75, 82, 0.7);
   }
   section.degrees {
     margin-top: 200px;
-  }
-  section.degrees div.courses {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
   }
   section.degrees div.courses .course {
     width: 285px;
     height: 400px;
   }
   section.universities {
-    background-color: rgb(229, 220, 244);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px;
     padding: 13px;
   }
   section.universities h1 {
     margin: 35px 0px;
     margin-bottom: 40px;
     font-size: 33px;
-    color: rgb(101, 84, 175);
-    text-align: center;
   }
   section.universities ul {
-    display: flex;
-    justify-content: space-evenly;
     padding: 30px;
     padding-bottom: 40px;
   }
   section.books {
     padding-top: 70px;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    width: 100%;
     height: 80px;
+    box-shadow: 255, 237, 237, 0.35 2px 15px 25px, rgba(232, 213, 213, 0.25) 0px 7px 10px;
   }
   section.books h1 {
-    color: rgb(101, 84, 175);
     font-size: 52px;
-    white-space: nowrap;
-    overflow: hidden;
-    position: absolute;
     width: 550px;
   }
   section.books h1 span {
@@ -260,16 +371,10 @@ ul {
     margin-left: 40px;
   }
   section.books .message {
-    background-color: rgb(208, 191, 234);
-    border-radius: 12px;
-    color: rgb(117, 90, 181);
-    display: block;
     font-size: 52px;
-    position: absolute;
     padding-left: 12px;
     top: 0.2rem;
-    left: 170px;
-    animation: openclose 7s ease-in-out infinite;
+    left: 275px;
   }
   @keyframes openclose {
     0% {
@@ -335,22 +440,12 @@ ul {
     }
   }
   section.books .container {
-    width: 100%;
     height: 300px;
-    margin-top: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 140px;
   }
   section.books .book {
-    width: 230px;
+    width: 212px;
     height: 290px;
-    position: relative;
-    text-align: center;
-    margin: 2.5%;
-  }
-  section.books .book.book-cover {
-    background-size: 100% 100%;
   }
   section.books .book:hover {
     cursor: pointer;
@@ -371,15 +466,7 @@ ul {
     opacity: 1;
   }
   section.books .book-cover {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
     transform-origin: 0 50%;
-    background: #111;
-    background-size: cover;
-    border-radius: 3px;
-    box-shadow: inset 4px 1px 3px rgba(255, 255, 255, 0.376) inset 0 -1px 2px rgba(0, 0, 0, 0.502);
     transition: all 0.5s ease-in-out;
   }
   section.books .book :hover .book-cover {
@@ -387,75 +474,27 @@ ul {
     transform-style: preserve-3d;
     box-shadow: inset 4px 1px 3px rgba(255, 255, 255, 0.3764705882), inset 0 -1px 2px rgba(0, 0, 0, 0.5019607843), 10px 0px 10px -5px rgba(0, 0, 0, 0.1882352941);
   }
-  section.books .cover1 {
-    background: url("assets/images/book-k-big.jpg");
-  }
-  section.books .cover2 {
-    background: url("assets/images/book-3-big.jpg");
-  }
-  section.books .cover3 {
-    background: url("assets/images/book-1-big.jpg");
-  }
-  section.books .cover4 {
-    background: url("assets/images/book-2-big.jpg");
-  }
   section.books .effect {
     width: 20px;
-    height: 100%;
     margin-left: 10px;
-    border-left: 2px solid rgba(0, 0, 0, 0.063);
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
     transition: all 0.5s ease;
   }
   section.books .light {
-    width: 90%;
-    height: 100%;
-    position: absolute;
-    border-radius: 3px;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
-    top: 0;
-    right: 0;
-    opacity: 0.1;
     transition: all 0.5s ease;
-  }
-  section.books .book-inside {
-    width: calc(100% - 2px);
-    height: 96%;
-    position: relative;
-    top: 2%;
-    border: 1px solid grey;
-    border-radius: 3px;
-    background: white;
-    box-shadow: 10px 40px 40px -10px rgba(0, 0, 0, 0.1882352941), inset -2px 0 0 grey, inset -3px 0 0 #dbdbdb, inset -4px 0 0 white, inset -5px 0 0 #dbdbdb, inset -6px 0 0 white, inset -7px 0 0 #dbdbdb, inset -8px 0 0 white, inset -9px 0 0 #dbdbdb;
   }
   section.books .title {
     font-size: 22px;
-    width: 100%;
-    color: rgb(101, 84, 175);
-    text-align: center;
-    position: absolute;
     top: -30px;
     height: 1px;
-    display: flex;
-    align-items: flex-end;
-    opacity: 0;
     transition: all 1s ease-in-out;
   }
   section.books .title p {
-    width: 100%;
-    margin: 0;
     line-height: 1.3;
   }
   section.books .btn {
-    position: relative;
-    background: rgb(208, 191, 234);
-    color: rgb(101, 84, 175);
     padding: 15px 20px;
     font-size: 16px;
-    border-radius: 50px;
     bottom: -50px;
-    display: inline-block;
-    opacity: 0;
     transition: all 1s ease-in-out;
   }
   section.cards {
