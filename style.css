@@ -80,340 +80,326 @@ ul {
     height: 100px;
     text-align: right;
   }
+  header div.toggle {
+    padding: 30px;
+    width: 30px;
+    height: 30px;
+    color: rgb(101, 84, 175);
+  }
   header ul {
     display: none;
   }
-  header h2 span {
-    display: flex;
-    align-self: top;
-    justify-self: flex-end;
-    width: 28px;
-    height: 28px;
-    margin: 20px 35px;
-    color: rgb(101, 84, 175);
-  }
-  header h2 span:checked ul {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 250px;
-    font-size: 22;
-  }
-  section.photo-bg {
-    width: 100%;
-    height: 60px;
-    max-height: 65px;
-    justify-self: center;
-    margin-bottom: 6px;
-    background: radial-gradient(circle at 10% 20%, rgb(254, 113, 210) 0%, rgb(184, 96, 255) 90%);
-  }
-  form {
-    display: flex;
-    justify-content: center;
-    box-shadow: 3px 4px 4px white;
-  }
-  form input {
-    display: inline-block;
-    position: absolute;
-    align-self: center;
-    top: 115px;
-    margin: 0px auto;
-    padding: 10px;
-    padding-left: 20px;
-    width: 120px;
-    height: 30px;
-    border-radius: 11px;
-    border: 2px solid white;
-    box-shadow: rgba(255, 237, 237, 0.15) 0px 15px 25px, rgba(232, 213, 213, 0.05) 0px 5px 10px;
-  }
-  form input::-moz-placeholder {
-    font-size: 10px;
-    opacity: 0.8;
-  }
-  form input::placeholder {
-    font-size: 10px;
-    opacity: 0.8;
-  }
-  form input:focus {
-    border: 1px solid white;
-  }
-  section.cards {
-    display: flex;
-    padding-top: 350px;
-    flex-direction: column;
-    justify-content: center;
-  }
-  section.cards img {
-    width: 200px;
-    height: 320px;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin-top: 170px;
-  }
-  .card {
-    flex-direction: row;
-    width: 200px;
-    height: 320px;
-    text-align: center;
-    padding: 0px;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    color: rgb(240, 240, 240);
-    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
-  }
-  .card img {
-    position: absolute;
-    -o-object-fit: cover;
-       object-fit: cover;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.9;
-    transition: opacity 0.2s ease-out;
-  }
-  .card h2 {
-    position: absolute;
-    width: 85%;
-    padding: 10px;
-    justify-self: center;
-    color: rgb(101, 84, 175);
-    font-size: 15px;
-    text-shadow: 1px 1px 3px rgb(101, 84, 175);
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 12px;
-    inset: auto auto 30px 30px;
-    margin: 0;
-    transition: display 0.3s 0.3s ease-out;
-    font-weight: 900;
-    text-transform: uppercase;
-  }
-  .card h2 span {
-    font-size: 12px;
-    padding: 6px;
-    text-align: left;
-  }
-  .card p, .card a {
-    position: absolute;
-    opacity: 0;
-    max-width: 80%;
-    transition: opacity 0.4s ease-out;
-    color: rgb(101, 84, 175);
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 5px;
-    border-radius: 12px;
-  }
-  .card p {
-    inset: auto auto 50px 30px;
-    background-color: rgba(255, 255, 255, 0.7);
-    text-shadow: 1px 1px 3px rgb(101, 84, 175);
-  }
-  .card a {
-    inset: auto auto 30px 30px;
-    color: inherit;
-    text-decoration: none;
-    text-shadow: 2px 2px 6px rgb(101, 84, 175);
-  }
-  .card a.button-2 {
-    transition: none;
-    width: 30px;
-    height: 20px;
-  }
-  .card:hover h2 {
-    inset: auto auto 290px 23px;
-    transition: display 0.5s ease-out;
-    display: none;
-  }
-  .card:hover p, .card:hover a {
-    opacity: 1;
-    transition: opacity 0.5s 0.4s ease-in;
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-  .card:hover p {
-    margin-bottom: 30px;
-  }
-  .card:hover img {
-    transition: opacity 0.4s ease-in;
-    opacity: 1;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0px;
-    margin-top: 70px;
-    font-family: "Roboto", sans-serif;
-  }
-  h2.eksploro {
-    color: rgb(101, 84, 175);
-    justify-content: center;
-    text-align: center;
-    font-size: 30px;
-    margin: 25px 0px 20px;
-  }
-  div.courses {
-    background-color: rgb(229, 220, 244);
-    display: grid;
-    grid-template-rows: repeat(4, 120px);
-    grid-template-columns: 1fr;
-    margin-bottom: 40px;
-  }
-  div.courses .course {
-    background-color: white;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    border-radius: 12px;
-    padding: 3px;
-    width: 270px;
-    transition: background-color 0.2s ease;
-  }
-  div.courses .course img {
-    display: inline;
-    margin-right: 15px;
-    border-radius: 12px;
-    margin-left: 3px;
-    opacity: 0.8;
-    align-self: center;
-  }
-  div.courses .course h4 {
-    margin: 10px 0px 15px 0px;
-    color: rgb(69, 44, 127);
-    align-self: center;
-    flex: 1;
-  }
-  div.courses .course h4 span {
-    padding-left: 70px;
-    font-size: 14px;
-    color: rgba(77, 75, 82, 0.7);
-  }
-  div.universities {
-    background-color: rgb(229, 220, 244);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px;
-    height: 600px;
-    padding: 50px;
-    margin: 30px;
-  }
-  div.universities h1.sub-title {
-    color: rgb(101, 84, 175) !important;
-    font-size: 20px;
-    text-align: center;
-    margin: 25px 0px !important;
-    margin-bottom: 30px !important;
-  }
-  div.universities ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px !important;
-  }
-  div.books {
-    padding-top: 70px;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    width: 100%;
-    height: 80px;
-  }
-  div.books h1 {
-    color: rgb(101, 84, 175);
-    font-size: 52px;
-    white-space: nowrap;
-    overflow: hidden;
-    position: absolute;
-    width: 550px;
-  }
-  div.books h1 span {
-    font-size: 52px;
-    margin-left: 40px;
-  }
-  div.books .message {
-    background-color: rgb(208, 191, 234);
-    border-radius: 12px;
-    color: rgb(117, 90, 181);
-    display: block;
-    font-size: 52px;
-    position: absolute;
-    padding-left: 12px;
+}
+section.photo-bg {
+  width: 100%;
+  height: 60px;
+  max-height: 65px;
+  justify-self: center;
+  margin-bottom: 6px;
+  background: radial-gradient(circle at 10% 20%, rgb(254, 113, 210) 0%, rgb(184, 96, 255) 90%);
+}
+section.universities {
+  display: none;
+}
+section.universities h1 {
+  display: none;
+}
+section.universities ul {
+  display: none;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  box-shadow: 3px 4px 4px white;
+}
+form input {
+  display: inline-block;
+  position: absolute;
+  align-self: center;
+  top: 115px;
+  margin: 0px auto;
+  padding: 10px;
+  padding-left: 20px;
+  width: 120px;
+  height: 30px;
+  border-radius: 11px;
+  border: 2px solid white;
+  box-shadow: rgba(255, 237, 237, 0.15) 0px 15px 25px, rgba(232, 213, 213, 0.05) 0px 5px 10px;
+}
+form input::-moz-placeholder {
+  font-size: 10px;
+  opacity: 0.8;
+}
+form input::placeholder {
+  font-size: 10px;
+  opacity: 0.8;
+}
+form input:focus {
+  border: 1px solid white;
+}
+
+section.cards {
+  display: flex;
+  padding-top: 350px;
+  flex-direction: column;
+  justify-content: center;
+}
+section.cards img {
+  width: 200px;
+  height: 320px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 170px;
+}
+
+.card {
+  flex-direction: row;
+  width: 200px;
+  height: 320px;
+  text-align: center;
+  padding: 0px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: rgb(240, 240, 240);
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+.card img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-out;
+}
+.card h2 {
+  position: absolute;
+  width: 85%;
+  padding: 10px;
+  justify-self: center;
+  color: rgb(101, 84, 175);
+  font-size: 15px;
+  text-shadow: 1px 1px 3px rgb(101, 84, 175);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  inset: auto auto 30px 30px;
+  margin: 0;
+  transition: display 0.3s 0.3s ease-out;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.card h2 span {
+  font-size: 12px;
+  padding: 6px;
+  text-align: left;
+}
+.card p, .card a {
+  position: absolute;
+  opacity: 0;
+  max-width: 80%;
+  transition: opacity 0.4s ease-out;
+  color: rgb(101, 84, 175);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border-radius: 12px;
+}
+.card p {
+  inset: auto auto 50px 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px 3px rgb(101, 84, 175);
+}
+.card a {
+  inset: auto auto 30px 30px;
+  color: inherit;
+  text-decoration: none;
+  text-shadow: 2px 2px 6px rgb(101, 84, 175);
+}
+.card a.button-2 {
+  transition: none;
+  width: 30px;
+  height: 20px;
+}
+.card:hover h2 {
+  inset: auto auto 290px 23px;
+  transition: display 0.5s ease-out;
+  display: none;
+}
+.card:hover p, .card:hover a {
+  opacity: 1;
+  transition: opacity 0.5s 0.4s ease-in;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.card:hover p {
+  margin-bottom: 30px;
+}
+.card:hover img {
+  transition: opacity 0.4s ease-in;
+  opacity: 1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+  margin-top: 70px;
+  font-family: "Roboto", sans-serif;
+}
+
+h2.eksploro {
+  color: rgb(101, 84, 175);
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  margin: 25px 0px 20px;
+}
+
+div.courses {
+  background-color: rgb(229, 220, 244);
+  display: grid;
+  grid-template-rows: repeat(4, 120px);
+  grid-template-columns: 1fr;
+  margin-bottom: 40px;
+}
+div.courses .course {
+  background-color: white;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 12px;
+  padding: 3px;
+  width: 270px;
+  transition: background-color 0.2s ease;
+}
+div.courses .course img {
+  display: inline;
+  margin-right: 15px;
+  border-radius: 12px;
+  margin-left: 3px;
+  opacity: 0.8;
+  align-self: center;
+}
+div.courses .course h4 {
+  margin: 10px 0px 15px 0px;
+  color: rgb(69, 44, 127);
+  align-self: center;
+  flex: 1;
+}
+div.courses .course h4 span {
+  padding-left: 70px;
+  font-size: 14px;
+  color: rgba(77, 75, 82, 0.7);
+}
+div .books {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+}
+div .books h1 {
+  color: rgb(101, 84, 175);
+  font-size: 52px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  width: 350px;
+}
+div .books h1 span {
+  font-size: 32px;
+  margin-left: 20px;
+  background-color: rgb(208, 191, 234);
+}
+div .books .message {
+  background-color: rgb(208, 191, 234);
+  border-radius: 12px;
+  color: rgb(117, 90, 181);
+  display: block;
+  font-size: 32px;
+  position: absolute;
+  padding-left: 12px;
+  animation: openclose 7s ease-in-out infinite;
+}
+@keyframes openclose {
+  0% {
     top: 0.2rem;
-    left: 260px;
-    animation: openclose 7s ease-in-out infinite;
+    width: 0;
   }
-  @keyframes openclose {
-    0% {
-      top: 0.2rem;
-      width: 0;
-    }
-    5% {
-      width: 0;
-    }
-    15% {
-      width: 230px;
-    }
-    30% {
-      top: 0.2rem;
-      width: 230px;
-    }
-    33% {
-      top: 0.2rem;
-      width: 0;
-    }
-    35% {
-      top: 0.2rem;
-      width: 0;
-    }
-    38% {
-      top: -4.5rem;
-    }
-    48% {
-      top: -4.5rem;
-      width: 190px;
-    }
-    62% {
-      top: -4.5rem;
-      width: 190px;
-    }
-    66% {
-      top: -4.2rem;
-      width: 0;
-      text-indent: 0;
-    }
-    71% {
-      top: -9rem;
-      width: 0;
-      text-indent: 5px;
-    }
-    86% {
-      top: -9rem;
-      width: 285px;
-    }
-    95% {
-      top: -9rem;
-      width: 285px;
-    }
-    98% {
-      top: -9rem;
-      width: 0;
-      text-indent: 5px;
-    }
-    100% {
-      top: 0;
-      width: 0;
-      text-indent: 0;
-    }
+  5% {
+    width: 0;
+  }
+  15% {
+    width: 230px;
+  }
+  30% {
+    top: 0.2rem;
+    width: 230px;
+  }
+  33% {
+    top: 0.2rem;
+    width: 0;
+  }
+  35% {
+    top: 0.2rem;
+    width: 0;
+  }
+  38% {
+    top: -4.5rem;
+  }
+  48% {
+    top: -4.5rem;
+    width: 190px;
+  }
+  62% {
+    top: -4.5rem;
+    width: 190px;
+  }
+  66% {
+    top: -4.2rem;
+    width: 0;
+    text-indent: 0;
+  }
+  71% {
+    top: -9rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  86% {
+    top: -9rem;
+    width: 285px;
+  }
+  95% {
+    top: -9rem;
+    width: 285px;
+  }
+  98% {
+    top: -9rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  100% {
+    top: 0;
+    width: 0;
+    text-indent: 0;
   }
 }
+
 @media screen and (min-width: 769px) {
   h1.title {
     font-size: 56px;
@@ -431,7 +417,7 @@ ul {
     height: 100px;
     text-align: right;
   }
-  header h2 span {
+  header div.toggle {
     display: none;
   }
   header ul {
@@ -459,6 +445,13 @@ ul {
     color: rgb(251, 235, 240);
     text-shadow: 3px 3px 6px rgb(101, 84, 175);
     border-radius: 10px;
+  }
+  section.end {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(101, 84, 175);
+    color: rgb(101, 84, 175);
+    margin-top: 100%;
   }
   section.photo-bg {
     width: 100%;
