@@ -54,6 +54,26 @@ header {
 }
 
 section {
+
+  &.end {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(215, 205, 236);
+    color: $thrd-color;
+    margin-top: 40%;
+    text-align: right;
+    align-items: center;
+    h1 {
+      &.title {
+          color: rgb(149, 117, 222);
+          &.span {
+            color: $thrd-color;
+          }
+      }
+    }
+  }
+
     &.main {
         width: 100%;
         height: 300px;
@@ -221,7 +241,7 @@ main {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 12px;
-    inset: auto auto 30px 30px;
+    inset: auto auto 30px 17px;
     margin: 0;
     transition: display .3s .3s ease-out;
     font-weight: 900;
@@ -322,7 +342,7 @@ main {
                 align-self: center;
                 box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
                 border-radius: 12px;
-                padding: 3px;
+                padding: 1px;
                 width: 270px;
                 transition: background-color 0.2s ease;
             
@@ -359,15 +379,16 @@ main {
         height: 200px;
 
         h1 {
+            flex-direction: row;
             color: $thrd-color;
             font-size: 52px;
             white-space: nowrap;
-            overflow: hidden;
             position: absolute;
             width: 350px;
           }
         
           h1 span {
+            position: absolute;
             font-size: 32px;
             margin-left: 20px;
             background-color: rgb(208, 191, 234);
@@ -376,10 +397,7 @@ main {
           .message {
             background-color: rgb(208, 191, 234);
             border-radius: 12px;
-            color: rgb(117, 90, 181);
-            display: block;
-            font-size: 32px;          
-            position: absolute;
+            font-size: 22px;          
             padding-left: 12px;         
             animation: openclose 7s ease-in-out infinite;
           }
@@ -450,6 +468,169 @@ main {
         }
 
       }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        width:100%;
+        height: 300px;
+        margin-top: 110px;
+        justify-content: center;
+      }
+      
+      
+    .book {
+        width: 160px;
+        height: 220px;
+        text-align: center;
+        position: relative;
+        margin: 0px auto;
+        margin-top: 180px;
+
+        &.book-cover {
+            background-size: 100% 100%;
+        }
+        
+        &:hover { 
+            cursor:pointer; 
+            .book-cover {
+                transform: perspective(2000px) rotateY(-30deg);
+                transform-style: preserve-3d;
+                box-shadow: 
+                  inset 4px 1px 3px #ffffff60,
+                  inset 0 -1px 2px #00000080,
+                  10px 0px 10px -5px #00000030
+            }
+
+            .effect {
+                width: 40px;
+            }
+
+            .light {
+                opacity: 1;
+                width: 70%;
+            }
+
+            .btn, .title {
+                opacity: 1;
+            }
+        }
+    }
+      
+      .book-cover {
+        position: absolute;
+        z-index:1;
+        width: 100%;
+        height: 100%;
+        transform-origin: 0 50%;
+        background: #111;
+        background-size:cover;
+        border-radius: 3px;
+        box-shadow: 
+          inset 4px 1px 3px rgba(255, 255, 255, 0.376)
+          inset 0 -1px 2px rgba(0, 0, 0, 0.502);
+        transition: all .5s ease-in-out;
+      }
+
+    .book :hover .book-cover {
+        transform: perspective(2000px) rotateY(-30deg);
+        transform-style: preserve-3d;
+        box-shadow: 
+            inset 4px 1px 3px #ffffff60,
+            inset 0 -1px 2px #00000080,
+            10px 0px 10px -5px #00000030;
+      }
+      
+      .cover1 {
+        background: url('assets/images/book-4.jpg');
+      }
+      
+      .cover2 {
+        background: url('assets/images/book-3-3.jpg');
+      }
+      
+      .cover3 {
+        background: url('assets/images/book-1.jfif');
+      }
+
+      .cover4 {
+        background: url('assets/images/book-2-2.jpg');
+      }
+      
+      .effect {
+        width: 20px;
+        height: 100%;
+        margin-left: 10px;
+        border-left: 2px solid rgba(0, 0, 0, 0.063);
+        background-image: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+        transition: all .5s ease;
+      }
+      
+      .light {
+        width: 90%;
+        height: 100%;
+        position: absolute;
+        border-radius: 3px; 
+        background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 100%);
+        top: 0;
+        right:0;
+        opacity: .1;
+        transition: all .5s ease;
+      }
+      
+      .book-inside{
+        width: calc(100% - 2px);
+        height:96%;
+        position:relative;
+        top: 2%;
+        border: 1px solid grey;
+        border-radius:3px;
+        background: white;
+        box-shadow: 
+        10px 40px 40px -10px #00000030,
+        inset -2px 0 0 grey,
+        inset -3px 0 0 #dbdbdb,
+        inset -4px 0 0 white,
+        inset -5px 0 0 #dbdbdb,
+        inset -6px 0 0 white,
+        inset -7px 0 0 #dbdbdb,
+        inset -8px 0 0 white,
+        inset -9px 0 0 #dbdbdb;
+      }
+      
+      .title {
+        font-size:22px;
+        width: 100%;
+        color: $thrd-color;
+        text-align: center;
+        position: absolute;
+        top:-30px;
+        height: 1px;
+        display: flex;
+        align-items: flex-end;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+
+        p {
+            width: 100%;
+            margin:0;
+            line-height:1.3;
+        }
+      }
+      
+      .btn {
+        position:relative;
+        background: rgb(208, 191, 234);
+        color: $thrd-color;
+        padding: 15px 20px;
+        font-size: 16px;
+        border-radius: 50px;
+        bottom: -50px;
+        display: inline-block;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+      }
     } 
 
 @media screen and (min-width: 769px) {
@@ -465,6 +646,13 @@ main {
             color: $thrd-color;
         }
     }
+    }
+
+    
+    nav {
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     header {
@@ -513,9 +701,18 @@ main {
         &.end {
           width: 100%;
           height: 120px;
-          background-color: $thrd-color;
+          background-color: rgb(215, 205, 236);
           color: $thrd-color;
-          margin-top: 100%;
+          margin-top: 40%;
+          h1 {
+            &.title {
+                color: rgb(149, 117, 222);
+                &.span {
+                  color: $thrd-color;
+                }
+            }
+        }
+
         }
 
         &.photo-bg {
@@ -577,6 +774,7 @@ main {
                 font-size: 46px;
                 padding-top: 60px;
                 padding-left: 48px;
+                margin-bottom: 40px;
             }
 
             h2.eksploro {
@@ -613,7 +811,7 @@ main {
                             display: inline;
                             margin-right: 15px;
                             border-radius: 12px;
-                            margin-left: 3px;
+                            margin-left: 2px;
                             opacity: 0.8;
                             align-self: center;
                         }
